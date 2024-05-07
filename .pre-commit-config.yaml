@@ -19,7 +19,6 @@ repos:
         language_version: python3
         args: [--target-version=py39]
         files: ^(python/.*|benchmarks/.*)$
-        exclude: ^python/nx-cugraph/
   - repo: https://github.com/PyCQA/flake8
     rev: 6.0.0
     hooks:
@@ -39,11 +38,6 @@ repos:
     rev: v16.0.6
     hooks:
       - id: clang-format
-        exclude: |
-          (?x)^(
-            cpp/libcugraph_etl|
-            cpp/tests/c_api
-          )
         types_or: [c, c++, cuda]
         args: ["-fallback-style=none", "-style=file", "-i"]
   - repo: https://github.com/rapidsai/dependency-file-generator
@@ -63,4 +57,3 @@ repos:
               [.]flake8[.]cython$|
               meta[.]yaml$|
               setup[.]cfg$
-
