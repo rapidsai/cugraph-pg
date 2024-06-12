@@ -1,6 +1,6 @@
 # cuGraph Knowledge Graph
 
-When users hear Knowledge Graph (KG), or graph in general, there is the assumption that we are talking about a Graph Database.  While a graph database is one way to implement a knowledge graph, we are not building a graph database.  Therefore, we are not focus on ACID compliance, being transactional, or worry about multiple users. Our focus is just on being able to capture a KG.
+When users hear Knowledge Graph (KG), or graph in general, there is the assumption that we are talking about a Graph Database.  While a graph database is one way to implement a knowledge graph, we are not building a graph database.  Therefore, we are not focusing on ACID compliance, being transactional, or worrying about multiple users. Our focus is just on being able to capture a KG.
 
 The KG will also function as an DGL or PyG GraphStore.  The focus of this design are as follows:
 
@@ -9,7 +9,7 @@ The KG will also function as an DGL or PyG GraphStore.  The focus of this design
 * Temporal Graphs for GNNs Training and general Graph
 * Heterogeneous and Temporal Graphs for GNNs Training and general Graph
 * Dynamic Graphs
-* GNN Inferencing 
+* GNN Inferencing
 * LLM + Knowledge Graphs
 * LLM + Knoeledge Graphs + GNNs
 
@@ -24,24 +24,24 @@ That lack of a general consensus of a definition is common across many topics in
 * the graph-based perspective, which allows us to perform graph algorithms and inductive reasoning techniques on KGs;
 * the semantic-based perspective, which provides a formal framework for the semantic interpretation of the data, which is essential to perform deductive reasoning.
 
-There are two main paths for creating a Knowledge Graph, the first is as a triple store and the second is as a Property Graph.  Since we are not supporting queries on any property, and since the goal for properties to be used in GNN training, then the triple store option is not useful.  Moreover, a triple store is not an efficient graph processing model.  Therefore, the solution is to create a property Graph.  
+There are two main paths for creating a Knowledge Graph, the first is as a triple store and the second is as a Property Graph.  Since we are not supporting queries on any property, and since the goal for properties to be used in GNN training, then the triple store option is not useful.  Moreover, a triple store is not an efficient graph processing model.  Therefore, the solution is to create a property Graph.
 
-Following the consensus that a Knowledge Graph is a collect of a data graph and a feature graph, the goal is to define data container APIs. For the data graph, the cuGraph Graph could be used to fill that need.  The property graph could be provided by WholeGraph. However, the design allows for any solution that adheres to the API to be used. That would allow graph database to plug their property graph object in.  
+Following the consensus that a Knowledge Graph is a collect of a data graph and a feature graph, the goal is to define data container APIs. For the data graph, the cuGraph Graph could be used to fill that need.  The property graph could be provided by WholeGraph. However, the design allows for any solution that adheres to the API to be used. That would allow graph database to plug their property graph object in.
 </br>
 
 ![Design](img/KG-design.png "Knowledge Graph Design")
 
-This means that the cugraph-kg class is more of an orchestrator and controller.  Furthermore, this means that cugraph-kg will be pushing requirements down onto cugraph and WholeGraph to address required features.  
+This means that the cugraph-kg class is more of an orchestrator and controller.  Furthermore, this means that cugraph-kg will be pushing requirements down onto cugraph and WholeGraph to address required features.
 
 
 ## API Designs
 
-* KG 
+* KG
 * Data Graph
 * Feature Graph
   * Graph Features
   * Node Features
-  * Edge Features 
+  * Edge Features
 
 ## References
 
@@ -54,4 +54,3 @@ This means that the cugraph-kg class is more of an orchestrator and controller. 
 7.	Guu, K., Lee, K., Tung, Z., Pasupat, P., & Chang, M. (2020, November). Retrieval augmented language model pre-training. In International conference on machine learning (pp. 3929-3938). PMLR.
 8.	Lewis, P., Perez, E., Piktus, A., Petroni, F., Karpukhin, V., Goyal, N., ... & Kiela, D. (2020). Retrieval-augmented generation for knowledge-intensive nlp tasks. Advances in Neural Information Processing Systems, 33, 9459-9474.
 9.	Hu, E. J., Shen, Y., Wallis, P., Allen-Zhu, Z., Li, Y., Wang, S., ... & Chen, W. (2021). Lora: Low-rank adaptation of large language models. arXiv preprint arXiv:2106.09685.
-
