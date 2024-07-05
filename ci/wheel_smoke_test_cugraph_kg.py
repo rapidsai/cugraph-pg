@@ -13,7 +13,6 @@
 
 import cudf
 import cugraph
-import cugraph_pg
 
 if __name__ == "__main__":
     edgelist = cudf.DataFrame({"source": ["a", "b", "c"], "destination": ["b", "c", "d"]})

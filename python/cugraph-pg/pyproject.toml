@@ -3,7 +3,7 @@
 [build-system]
 
 requires = [
-    "cmake>=3.26.4",
+    "cmake>=3.26.4,!=3.30.0",
     "cython>=3.0.0",
     "ninja",
     "scikit-build-core[pyproject]>=0.7.0",

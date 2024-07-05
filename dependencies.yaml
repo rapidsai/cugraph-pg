@@ -70,7 +70,7 @@ dependencies:
       - output_types: conda
         packages:
           - c-compiler
-          - &cmake_ver cmake>=3.26.4
+          - &cmake_ver cmake>=3.26.4,!=3.30.0
           - cudnn=8.8
           - cxx-compiler
           - cython>=3.0.0
