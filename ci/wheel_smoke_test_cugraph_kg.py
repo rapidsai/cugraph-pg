@@ -1,4 +1,4 @@
-# Copyright (c) 2023, NVIDIA CORPORATION.
+# Copyright (c) 2023-2024, NVIDIA CORPORATION.
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
@@ -13,7 +13,7 @@
 
 import cudf
 import cugraph
-import cugraph-kg
+import cugraph_pg
 
 if __name__ == "__main__":
     edgelist = cudf.DataFrame({"source": ["a", "b", "c"], "destination": ["b", "c", "d"]})
